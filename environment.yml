@@ -1,0 +1,10 @@
+name: toltree
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+    - poetry>=1.0.0

@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "toltree"
+version = "0.0.1"
+description = "a Python package to build phylogenetic tree based on Darwin Tree of Life sample taxonomic ranking"
+authors = ["sjin09 <sl17@sanger.ac.uk>"]
+license = "MIT LICENSE"
+readme = "README.md"
+packages = [
+  { include = "toltree", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+ansible = { git = "https://github.com/etetoolkit/ete.git", branch = "ete4" }
+
+
+[tool.poetry.dev-dependencies]
+flake8 = { version = "^6.1"}
+black = { version = "^23.10"}
+pytest = { version = "^7.4.3"}
+
+[tool.poetry.extras]
+dev = ["flake8", "black", "pytest"]
+
+[tool.poetry.scripts]
+toltree = "toltree.__main__:main"
+
+[tool.coverage.paths]
+source = ["src", "*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["toltree"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 100
+
+[tool.black]
+line-length = 120
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+

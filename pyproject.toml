@@ -12,6 +12,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.9"
 ete4 = { git = "https://github.com/etetoolkit/ete.git", branch = "ete4" }
+natsort = "^8.4.0"
 
 
 [tool.poetry.dev-dependencies]
